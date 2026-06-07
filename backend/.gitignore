@@ -1,0 +1,13 @@
+# Secrets — NEVER commit these
+.env
+.env.*
+!.env.example
+
+# Build output
+backend
+/public/uploads/
+
+# IDE
+.idea/
+.vscode/
+*.swp

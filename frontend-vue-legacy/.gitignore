@@ -1,0 +1,82 @@
+#####################
+# ENV & SECRETS
+#####################
+.env
+.env.*
+!.env.example
+
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+
+#####################
+# NODE / VUE (FRONTEND)
+#####################
+node_modules/
+dist/
+.cache/
+coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Vite
+.vite/
+
+#####################
+# GO (BACKEND)
+#####################
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go build output
+bin/
+build/
+tmp/
+
+#####################
+# DOCKER & RUNTIME
+#####################
+# Docker overrides / local config
+docker-compose.override.yml
+*.pid
+
+#####################
+# OS / EDITOR TRASH
+#####################
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+#####################
+# LOGS / UPLOADS (JIKA TIDAK MAU MASUK REPO)
+#####################
+logs/
+*.log
+
+# Kalau upload lu di-generate runtime dan bukan asset static:
+public/uploads/
