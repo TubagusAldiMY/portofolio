@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="id" data-theme="dark" data-theme-preference="dark">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="text-scale" content="scale" />
+		<script>
+			(() => {
+				try {
+					const storageKey = 'portfolio-theme-preference';
+					const stored = localStorage.getItem(storageKey);
+					const preference =
+						stored === 'light' || stored === 'dark' || stored === 'system' ? stored : 'dark';
+					const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+					const theme = preference === 'system' ? (systemDark ? 'dark' : 'light') : preference;
+					const root = document.documentElement;
+
+					root.dataset.theme = theme;
+					root.dataset.themePreference = preference;
+					root.style.colorScheme = theme;
+				} catch {
+					document.documentElement.dataset.theme = 'dark';
+					document.documentElement.dataset.themePreference = 'dark';
+					document.documentElement.style.colorScheme = 'dark';
+				}
+			})();
+		</script>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>

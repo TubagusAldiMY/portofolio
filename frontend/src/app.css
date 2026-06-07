@@ -1,0 +1,261 @@
+@import 'tailwindcss';
+
+@theme inline {
+	--color-canvas: var(--theme-canvas);
+	--color-canvas-subtle: var(--theme-canvas-subtle);
+	--color-surface: var(--theme-surface);
+	--color-surface-alt: var(--theme-surface-alt);
+	--color-surface-raised: var(--theme-surface-raised);
+	--color-line: var(--theme-line);
+	--color-line-muted: var(--theme-line-muted);
+	--color-ink: var(--theme-ink);
+	--color-body: var(--theme-body);
+	--color-muted: var(--theme-muted);
+	--color-subtle: var(--theme-subtle);
+	--color-inverse: var(--theme-inverse);
+	--color-accent: var(--theme-accent);
+	--color-accent-hover: var(--theme-accent-hover);
+	--color-accent-emphasis: var(--theme-accent-emphasis);
+	--color-accent-emphasis-hover: var(--theme-accent-emphasis-hover);
+	--color-accent-soft: var(--theme-accent-soft);
+	--color-success: var(--theme-success);
+	--color-success-hover: var(--theme-success-hover);
+	--color-success-soft: var(--theme-success-soft);
+	--color-danger: var(--theme-danger);
+	--color-danger-soft: var(--theme-danger-soft);
+	--color-warning: var(--theme-warning);
+	--color-warning-soft: var(--theme-warning-soft);
+
+	--font-sans:
+		-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji';
+	--font-mono:
+		ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+:root {
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+
+	--theme-canvas: #0d1117;
+	--theme-canvas-subtle: #010409;
+	--theme-surface: #161b22;
+	--theme-surface-alt: #21262d;
+	--theme-surface-raised: #161b22;
+	--theme-line: #30363d;
+	--theme-line-muted: #21262d;
+	--theme-ink: #f0f6fc;
+	--theme-body: #c9d1d9;
+	--theme-muted: #8b949e;
+	--theme-subtle: #6e7681;
+	--theme-inverse: #ffffff;
+	--theme-accent: #58a6ff;
+	--theme-accent-hover: #79c0ff;
+	--theme-accent-emphasis: #1f6feb;
+	--theme-accent-emphasis-hover: #388bfd;
+	--theme-accent-soft: #388bfd1a;
+	--theme-success: #238636;
+	--theme-success-hover: #2ea043;
+	--theme-success-soft: #23863626;
+	--theme-danger: #ff7b72;
+	--theme-danger-soft: #f8514926;
+	--theme-warning: #d29922;
+	--theme-warning-soft: #bb800926;
+	--theme-selection-bg: #58a6ff33;
+	--theme-selection-fg: #ffffff;
+	--theme-focus: #58a6ff;
+	--theme-shadow-soft: 0 16px 40px rgb(1 4 9 / 0.35);
+	--theme-shadow-float: 0 24px 64px rgb(1 4 9 / 0.45);
+	--theme-grid-color: rgb(88 166 255 / 0.11);
+	--theme-code-canvas: #0d1117;
+	--theme-code-line: #30363d;
+	--theme-code-body: #c9d1d9;
+	--theme-code-muted: #8b949e;
+	--theme-code-shadow: 0 0 30px rgb(88 166 255 / 0.1);
+	--theme-hero-overlay: linear-gradient(
+		90deg,
+		#0d1117 0%,
+		rgb(13 17 23 / 0.96) 38%,
+		rgb(13 17 23 / 0.72) 68%,
+		rgb(13 17 23 / 0.92) 100%
+	);
+}
+
+html[data-theme='light'] {
+	--theme-canvas: #ffffff;
+	--theme-canvas-subtle: #f6f8fa;
+	--theme-surface: #ffffff;
+	--theme-surface-alt: #f6f8fa;
+	--theme-surface-raised: #ffffff;
+	--theme-line: #d0d7de;
+	--theme-line-muted: #d8dee4;
+	--theme-ink: #344054;
+	--theme-body: #475467;
+	--theme-muted: #667085;
+	--theme-subtle: #98a2b3;
+	--theme-inverse: #ffffff;
+	--theme-accent: #0969da;
+	--theme-accent-hover: #0550ae;
+	--theme-accent-emphasis: #0969da;
+	--theme-accent-emphasis-hover: #0550ae;
+	--theme-accent-soft: #ddf4ff;
+	--theme-success: #1a7f37;
+	--theme-success-hover: #116329;
+	--theme-success-soft: #dafbe1;
+	--theme-danger: #cf222e;
+	--theme-danger-soft: #ffebe9;
+	--theme-warning: #9a6700;
+	--theme-warning-soft: #fff8c5;
+	--theme-selection-bg: #0969da26;
+	--theme-selection-fg: #1f2328;
+	--theme-focus: #0969da;
+	--theme-shadow-soft: 0 16px 40px rgb(31 35 40 / 0.08);
+	--theme-shadow-float: 0 24px 64px rgb(31 35 40 / 0.14);
+	--theme-grid-color: rgb(9 105 218 / 0.12);
+	--theme-code-canvas: #18202b;
+	--theme-code-line: #364152;
+	--theme-code-body: #d0d5dd;
+	--theme-code-muted: #98a2b3;
+	--theme-code-shadow: 0 18px 54px rgb(24 32 43 / 0.22);
+	--theme-hero-overlay: linear-gradient(
+		90deg,
+		rgb(255 255 255 / 0.96) 0%,
+		rgb(255 255 255 / 0.91) 38%,
+		rgb(255 255 255 / 0.7) 68%,
+		rgb(255 255 255 / 0.92) 100%
+	);
+}
+
+html[data-theme='dark'] {
+	color-scheme: dark;
+}
+
+html[data-theme='light'] {
+	color-scheme: light;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100dvh;
+	background-color: var(--theme-canvas);
+	color: var(--theme-body);
+	line-height: 1.6;
+}
+
+::selection {
+	background: var(--theme-selection-bg);
+	color: var(--theme-selection-fg);
+}
+
+/* --- Gradient text utilities -------------------------------------- */
+
+.text-gradient {
+	background: linear-gradient(to right, #7ee787, #aff5b4);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple {
+	background: linear-gradient(to right, #939aff, #c471ed, #f64f59);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.text-balance {
+	text-wrap: balance;
+}
+
+/* --- Scroll animation classes ------------------------------------- */
+
+.before-enter {
+	opacity: 0;
+	transform: translateY(30px);
+	transition:
+		opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+		transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.enter {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* --- Base elements ------------------------------------------------ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--theme-ink);
+	line-height: 1.25;
+	font-weight: 600;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+	font: inherit;
+}
+
+textarea {
+	resize: vertical;
+}
+
+:focus-visible {
+	outline: 2px solid var(--theme-focus);
+	outline-offset: 2px;
+	border-radius: 3px;
+}
+
+/* --- Chat widget markdown ----------------------------------------- */
+
+.markdown-content ul {
+	list-style: disc;
+	padding-left: 1.2em;
+}
+.markdown-content ol {
+	list-style: decimal;
+	padding-left: 1.2em;
+}
+.markdown-content strong {
+	color: var(--theme-ink);
+	font-weight: 700;
+}
+.markdown-content a {
+	color: var(--theme-accent);
+	text-decoration: underline;
+}
+.markdown-content p {
+	margin-bottom: 0.5em;
+}
+.markdown-content p:last-child {
+	margin-bottom: 0;
+}
+
+/* --- Scrollbar (chat) -------------------------------------------- */
+
+.scrollbar-gh::-webkit-scrollbar {
+	width: 6px;
+}
+.scrollbar-gh::-webkit-scrollbar-track {
+	background: transparent;
+}
+.scrollbar-gh::-webkit-scrollbar-thumb {
+	background: var(--theme-line);
+	border-radius: 3px;
+}
